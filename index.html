@@ -8,27 +8,63 @@
         body {
             font-family: Arial, sans-serif;
             text-align: center;
-            margin: 20px;
+            margin: 40px;
+            background-color: #f4f4f4;
         }
-        label, p {
+        .container {
+            background: white;
+            padding: 20px;
+            max-width: 400px;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #333;
+        }
+        label {
             font-size: 18px;
+            display: block;
+            margin-bottom: 10px;
         }
-        input, button {
+        input {
             padding: 10px;
             font-size: 16px;
+            width: 100%;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 15px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
             margin-top: 10px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        p {
+            font-size: 18px;
+            margin-top: 15px;
+            color: #555;
         }
     </style>
 </head>
 <body>
 
-    <h2>무료 보관일 계산기</h2>
-    
-    <label for="date"> 입고일을 선택하세요:
-        <input type="date" id="now_date" min="2023-12-01">
-        <button type="button" id="date_submit">계산하기</button>
-    </label>
-    <p id="txtbtn">무료보관일 계산중... </p>
+    <div class="container">
+        <h2>무료 보관일 계산기</h2>
+        <label for="date"> 입고일을 선택하세요:
+            <input type="date" id="now_date" min="2023-12-01">
+            <button type="button" id="date_submit">계산하기</button>
+        </label>
+        <p id="txtbtn">무료보관일 계산중...</p>
+    </div>
 
     <script>
         // 오늘 날짜를 기본값으로 설정
