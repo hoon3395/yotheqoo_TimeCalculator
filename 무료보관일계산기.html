@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>무료 보관일 계산기</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        label, p {
+            font-size: 18px;
+        }
+        input, button {
+            padding: 10px;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>무료 보관일 계산기</h2>
+    
+    <label for="date"> 입고일을 선택하세요:
+        <input type="date" id="now_date" min="2023-12-01">
+        <button type="button" id="date_submit">계산하기</button>
+    </label>
+    <p id="txtbtn">무료보관일 계산중... </p>
+
+    <script>
+        // 오늘 날짜를 기본값으로 설정
+        document.getElementById('now_date').value = new Date().toISOString().substring(0, 10);
+
+        // 계산 버튼 클릭 이벤트
+        document.querySelector('#date_submit').addEventListener('click', function() {
+            const inputday = document.querySelector('#now_date').value;
+            const dday = new Date(inputday);
+            dday.setDate(dday.getDate() + 35); // 35일 추가
+
+            // 결과 표시
+            const subs = document.getElementById('txtbtn');
+            subs.innerText = dday.toLocaleDateString() + ' 까지 무료보관입니다.';
+        });
+    </script>
+
+</body>
+</html>
